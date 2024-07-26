@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+ 
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+
+
+.sectionDivider::before{
+  content: "";
+  position: absolute;
+  height: 4px;
+  width: 120px;
+  top: 15px;
+  left: -140px;
+}
+
+
+.sectionDivider::after{
+  content: "";
+  position: absolute;
+  height: 4px;
+  width: 120px;
+  top: 15px;
+  left: 50px;
+}
