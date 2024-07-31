@@ -7,18 +7,30 @@ import Portfolio from './Components/Portfolio/Portfolio';
 import About from './Components/About/About.jsx';
 import Contact from './Components/Contact/Contact.jsx';
 import Footer from './Components/Footer/Footer.jsx';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import Layout from './Components/Layout/Layout.jsx';
+
+let router = createBrowserRouter([
+  {
+    path: "ReactApp-first/", element: <Layout />, children: [
+
+      { path: "", element: <Home /> },
+      { path: "portfolio", element: <Portfolio /> },
+      { path: "about", element: <About /> },
+      { path: "contact", element: <Contact /> },
+      { path: "*", element: <Contact /> },
+
+    ]
+  }
+])
 
 function App() {
-  
+
 
   return (
     <>
-        <Home />
-        <Portfolio />
-        <About/>
-        <Contact/>
-        <Footer/>
-      
+      <RouterProvider router={router}></RouterProvider>
+
     </>
   )
 }

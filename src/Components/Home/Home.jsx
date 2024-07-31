@@ -10,9 +10,9 @@ export default function Home(props) {
    
     return (
         <>
-            <Navbar />
-            <main className='min-h-70vh bg-primary pt-32 md:pt-0 lg:pt-32'>
-                <div className="container mx-auto flex flex-col justify-end items-center md:justify-center lg:justify-end min-h-70vh">
+            
+            <main className='min-h-screen bg-primary pt-32 md:pt-0 lg:pt-32'>
+                <div className="flex flex-col justify-end items-center md:justify-center lg:justify-end min-h-70vh">
 
                     <img className='mb-10' src={avatarImage} width={"250px"} alt="avatarImage" />
                     <h1 className='text-6xl font-bold text-white text-center'>START REACT</h1>

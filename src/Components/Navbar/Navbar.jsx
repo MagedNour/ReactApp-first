@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -19,7 +20,7 @@ export default function Navbar() {
                 <div className='container mx-auto px-5 flex flex-col lg:flex-row justify-between items-center py-8'>
                     <div className="flex justify-between items-center w-full">
                         <div className="brand text-xl lg:text-3xl text-white font-bold uppercase cursor-pointer">
-                            Start React
+                            <Link to="/ReactApp-first">Start React</Link>
                         </div>
                         <button
                             onClick={toggleNavbar}
@@ -32,28 +33,24 @@ export default function Navbar() {
                     <div className={`nav-items w-full lg:w-auto lg:block transition-all duration-300 ease-in-out ${isOpen ? 'max-h-screen mt-4' : 'max-h-0 mt-0'} lg:max-h-max overflow-hidden lg:overflow-visible`}>
                         <ul className='flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-20'>
                             <li className='nav-item'>
-                                <a
-                                    className={`nav-link cursor-pointer hover:text-primary text-white font-bold py-5 px-10 rounded-md inline-block w-full ${selectedItem === 'Portfolio' ? 'bg-primary hover:text-white' : ''}`}
-                                    onClick={() => handleNavItemClick('Portfolio')}
-                                >
+                                <NavLink to="portfolio"
+                                    className={`nav-link cursor-pointer text-white font-bold py-5 px-10 rounded-md inline-block w-full`}>
                                     Portfolio
-                                </a>
+                                </NavLink>
                             </li>
                             <li className='nav-item'>
-                                <a
-                                    className={`nav-link cursor-pointer hover:text-primary text-white font-bold py-5 px-10 rounded-md inline-block w-full ${selectedItem === 'About' ? 'bg-primary hover:text-white' : ''}`}
-                                    onClick={() => handleNavItemClick('About')}
+                                <NavLink to="about"
+                                    className={`nav-link cursor-pointer  text-white font-bold py-5 px-10 rounded-md inline-block w-full`}
                                 >
                                     About
-                                </a>
+                                </NavLink>
                             </li>
                             <li className='nav-item'>
-                                <a
-                                    className={`nav-link cursor-pointer hover:text-primary text-white font-bold py-5 px-10 rounded-md inline-block w-full ${selectedItem === 'Contact' ? 'bg-primary hover:text-white' : ''}`}
-                                    onClick={() => handleNavItemClick('Contact')}
+                                <NavLink to="contact"
+                                    className={`nav-link cursor-pointer  text-white font-bold py-5 px-10 rounded-md inline-block w-full`}
                                 >
                                     Contact
-                                </a>
+                                </NavLink>
                             </li>
                         </ul>
                     </div>
